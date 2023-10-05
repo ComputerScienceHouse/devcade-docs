@@ -14,7 +14,7 @@
 
 The Devcade project should theoretically run on just about any linux distro if set up properly. Our distro of choice is Debian 11.
 
-We now take advantage of Debian's preseed functionality to install the OS, and set up our launcher, [devcade-onboard](https://github.com/computersciencehouse/devcade-onboard). Our preseed file is located at https://devcade.csh.rit.edu/preseed.txt and is based off of the file given as an example in the [Debian Wiki](https://wiki.debian.org/DebianInstaller/Preseed).
+We now take advantage of Debian's preseed functionality to install the OS, and set up our launcher, [devcade-onboard](https://github.com/computersciencehouse/devcade-onboard). Our preseed file is located at https://devcade.csh.rit.edu/preseed and is based off of the file given as an example in the [Debian Wiki](https://wiki.debian.org/DebianInstaller/Preseed).
 
 Devcade and its games ought to run on nearly any x86 hardware released in the last 10 years, but we recommend:
 
