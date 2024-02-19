@@ -2,25 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="/_media/dark.css">
-  <link rel="shortcut icon" href="/_media/DevcadeLogoNoText.png")>
-  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
-  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" />
+  <link rel="shortcut icon" href="/_media/DevcadeLogoNoText.png"> 
 </head>
-<body>
+<body style="background-color: #2f2f2f;">
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: 'Devcade Documentation',
-      repo: '',
-      logo: '/_media/DevcadeLogoNoText.png',
+      logo: '/_media/DevcadeLogoThin.png',
+      alias: {
+        '/website-repo': 'https://raw.githubusercontent.com/ComputerScienceHouse/devcade-website/main/',
+        '/library-repo': 'https://raw.githubusercontent.com/ComputerScienceHouse/Devcade-library/main/',
+        '/onboard-repo': 'https://raw.githubusercontent.com/ComputerScienceHouse/devcade-onboard/main/',
+        '/api-repo': 'https://raw.githubusercontent.com/ComputerScienceHouse/devcade-api/master/',
+        '/template-repo': 'https://raw.githubusercontent.com/ComputerScienceHouse/Devcade-game-template/main/',
+        '/flatpakify-repo': 'https://raw.githubusercontent.com/ComputerScienceHouse/devcade-flatpakify/master/'
+      },
+      relativePath: true,
       loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
       plugins: [
-        EditOnGithubPlugin.create("https://github.com/ComputerScienceHouse/devcade-docs/tree/docs/docs/")
+        // Custom plugin from docsify's own repo. modified to work with non-master branches
+        function (hook, vm) {
+            hook.beforeEach(markdown => {
+              if (/githubusercontent\.com/.test(vm.route.file)) {
+                url = vm.route.file
+                  .replace('raw.githubusercontent.com', 'github.com')
+                  // Regex captures everything before the branch in one group, and the 
+                  // branch onwards in another. Then add blob between
+                  .replace(/(github.com\/.*\/.*\/)(.*\/.*)/, "$1edit/$2");
+              } else if (/jsdelivr\.net/.test(vm.route.file)) { // We wont use this so I'm not gonna bother fixing
+                url = vm.route.file
+                  .replace('cdn.jsdelivr.net/gh', 'github.com')
+                  .replace('@master', '/blob/master');
+              } else {
+                url =
+                  'https://github.com/ComputerScienceHouse/devcade-docs/blob/docs/docs/' +
+                  vm.route.file;
+              }
+              // Switched to inserting html so it could be right aligned.
+              // The html is copied directly from the browser what the md would
+              // render plus the style float right
+              const editMd = //'[:memo: Edit Document](' + url + ')\n'
+                `<p style="float: right">
+                  <a href="${url}" target="_blank" rel="noopener">
+                    <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8.png" alt="memo" class="emoji" loading="lazy">
+                     Edit on github
+                  </a>
+                </p>\n\n`;
+              return (
+                editMd +
+                markdown
+              );
+            });
+          },
       ]
     }
   </script>
