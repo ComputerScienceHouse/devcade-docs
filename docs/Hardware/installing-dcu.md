@@ -69,3 +69,32 @@ The installation takes around 10 minutes. When finished, it will reboot.
 ## Configuration and setup
 
 When the machine comes back up, you will be presented with a login prompt. Log in with username `devcade` and the provided password, and then run the `configure.sh` script in the home directory. Reboot again, and you should have a shiny new Devcade!
+
+## Volume Control
+
+Volume controls are not setup by the install script by default (as of 2024-04-03).
+
+To configure volume controls one must have buttons that send `XF86AudioRaiseVolume` and `XF86AudioLowerVolume` with an optional mute button that sends `XF86AudioToggleMute`.
+
+The volume button also requiers the package `pamixer`.
+
+The following code should be added to `/home/devcade/.config/openbox/rc.xml`.
+
+```
+<keybind key="XF86AudioRaiseVolume">
+  <action name="Execute">
+    <command>pamixer -i 1</command>
+  </action>
+</keybind>
+<keybind key="XF86AudioLowerVolume">
+  <action name="Execute">
+    <command>pamixer -d 1</command>
+  </action>
+</keybind>
+<keybind key="XF86AudioMute">
+  <action name="Execute">
+    <command>pamixer -t</command>
+  </action>
+</keybind>
+```
+This should be added somewhere inside the `<keyboard> ... </keyboard>` element. There should be other keybinds so just put it right after one if you don't know exactly where to put it.
