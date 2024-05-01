@@ -1,71 +1,104 @@
-# Setting Up a New Cabinet
+Install Debian 12 (Bookworm)
+- Set the hostname to `dcu.csh.rit.edu`
+- Set the password for the `root` user
+- Create a user named `devcade` and set a password
+- When you get to disk configutation, select the option to use the entire disk, and put everythin in one partition
+- Under software selection, make sure only the only selected options are `SSH Server` and `Basic system utilities`
 
-## Table of Contents
-- [Summary](#summary)
-- [Booting Up](#booting-up)
-  - [BIOS](#bios)
-  - [UEFI](#uefi)
-- [The Preseed File](#the-preseed-file)
-- [Installation Components](#installation-components)
-- [Booting the Installer](#booting-the-installer)
-- [Configuration and Setup](#configuration-and-setup)
+Once the system is installed, log in to the root user, and install `sudo` through apt.
 
-## Summary
+Once that is installed, add the `devcade` user to the sudoers file.
 
-The Devcade project should theoretically run on just about any linux distro if set up properly. Our distro of choice is Debian 11.
+At this point, the `devcade` user should have permissions to use `sudo`. Once this is the case, log in to the `devcade` user. You should be able to complete the rest of the setup from there.
 
-We now take advantage of Debian's preseed functionality to install the OS, and set up our launcher, [devcade-onboard](https://github.com/computersciencehouse/devcade-onboard). Our preseed file is located at https://devcade.csh.rit.edu/preseed.txt and is based off of the file given as an example in the [Debian Wiki](https://wiki.debian.org/DebianInstaller/Preseed).
+Install the following packages through apt:
+- git
+- xterm
+- openbox
+- compton
+- curl
+- vim
+- gzip
+- build-essential
+- pkg-config
+- libglib2.0-dev
+- xorg
+- libusb-dev
+- meson
+- cmake
+- libnfc-dev
+- libfreefare-dev
+- pamixer
 
-Devcade and its games ought to run on nearly any x86 hardware released in the last 10 years, but we recommend:
+Run the following commands to install the dotnet SDK
 
-**CPU:** Intel Core i5 (5th gen or better)
+```
+wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-6.0
+```
 
-**RAM:** 8GB
+Run the following command to install rustup. If it asks you to choose an installation option, select the default option.
 
-**GPU:** ¯\\\_(ツ)\_/¯
+```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 
-## Booting Up
+Once that is installed, run this command to update the path: ```. "$HOME/.cargo/env"```
+Make sure you include the leading dot in the command.
 
-To begin, download a copy of [Debian Bullseye](https://mirrors.rit.edu/debian/debian-cd/11.6.0/amd64/iso-cd/debian-11.6.0-amd64-netinst.iso). Flash it onto a USB drive and boot from it. **Make sure to have the machine connected to the internet.** If you can, add a DHCP entry.
+Set the default channel to nightly with `rustup default nightly`
 
-When you see the GRUB screen, you will need to supply the URL of our preseed file.
+Clone this repo `https://github.com/Mstrodl/flatpak.git`
 
-### BIOS
+Follow the guide here to build flatpak https://github.com/Mstrodl/flatpak/blob/main/CONTRIBUTING.md
 
-If booting with BIOS, simply press `esc` and type `auto url=https://devcade.csh.rit.edu/preseed.txt`. 
+Run these commands:
+```
+curl -L https://github.com/nfc-tools/libfreefare/releases/download/libfreefare-0.4.0/libfreefare-0.4.0.tar.bz2 > libfreefare-0.4.0.tar.bz2
+bzip2 -d libfreefare-0.4.0.tar.bz2
+```
 
-### UEFI
+Clone the onboard repo from here: `https://github.com/ComputerScienceHouse/devcade-onboard`
 
-If using UEFI, enter `Advanced Options`, select `Automated Install`, press `e`, and move down to the line that starts with `linux`, and at the end of the line, add `auto url=https://devcade.csh.rit.edu/preseed.txt`. Press `^X` to boot.
+Run the following series of commands:
+```
+cd devcade-onboard/onboard/backend
+cargo build
+cd .. 
+./build.py
+LD_LIBRARY_PATH=/usr/local/lib
+```
 
-## The Preseed File
+From the homedir, copy the .xinitrc from devcade-onboard to the homedir
 
-The preseed file is simply a list of pre-selections for the debian installer. It is used to set up networking, configure disk partitions, and set up the account. It will also handle automatically selecting yes/no on prompts, but can stop to let you control things like the password and the disk to install the OS to.
+Copy .env.template to .env, and get values for the fields from an RTP or a Devcade Admin
 
-## Installation Components
+The last step will be to set up volume controls. In order to configure volume controls, the system running devcade must have buttons that send `XF86AudioRaiseVolume` and `XF86AudioLowerVolume`, with an optional mute button that sends `XF86AudioToggleMute`
 
-The preseed file installs the ssh-server, along with the following individual packages: `xinit xterm git build-essential wget openbox compton pulseaudio x11-xserver-utils`. 
 
-[devcade-onboard](https://github.com/computersciencehouse/devcade-onboard) runs as an X11 application in Openbox, and runs Compton and pulseaudio. There are also some useful build utilities.
+Run the following command to move to the proper directory: `cd /home/devcade/.config/openbox`
 
-Apart from that, there are a number of auxiliary files:
+If any of the directories in that path do not already exist, create them.
 
-- `bashrc-check.sh`: Used to append configuration to `.bashrc`
-- `.env`: Environment variables used for the onboard
-- `rc.xml`: Openbox configuration
-- `update.sh`: Script used to update the onboard
-- `tty1_service_override.conf`: getty systemd service
-- `.xinitrc`: Starts X11 server, loads environment vars, configures display, and launches the onboard!
-- `configure.sh`: Script that installs the Dotnet SDK and all of the above!
+Once in that directory, add the following code to `rc.xml`:
+```
+<keybind key="XF86AudioRaiseVolume">
+  <action name="Execute">
+    <command>pamixer -i 1</command>
+  </action>
+</keybind>
+<keybind key="XF86AudioLowerVolume">
+  <action name="Execute">
+    <command>pamixer -d 1</command>
+  </action>
+</keybind>
+<keybind key="XF86AudioMute">
+  <action name="Execute">
+    <command>pamixer -t</command>
+  </action>
+</keybind>
+```
+This should be added somewhere inside the `<keyboard> ... </keyboard>` element. There should be other keybinds so just put it right after one if you don't know exactly where to put it.
 
-## Booting the installer
-
-The installer will grab the preseed file from our website, which will pre-fill many options for you, such as packages to install. You can navigate to the preseed url in your browser and read the options used.
-
-It will also set up the devcade user, and prompt you for a password. If using it, the machine will set up its hostname using DHCP.
-
-The installation takes around 10 minutes. When finished, it will reboot.
-
-## Configuration and setup
-
-When the machine comes back up, you will be presented with a login prompt. Log in with username `devcade` and the provided password, and then run the `configure.sh` script in the home directory. Reboot again, and you should have a shiny new Devcade!
+Once that is done, you should have a fully set up system!

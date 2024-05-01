@@ -1,4 +1,4 @@
-# Making your first Devcade game
+# Making Your First Devcade Game
 
 So, you want to make a Devcade game? Well you chose the right place. 
 
