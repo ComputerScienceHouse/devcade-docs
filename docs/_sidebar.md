@@ -16,3 +16,4 @@
 * [API](/api-repo)
 * [Monogame Game Template](/template-repo)
 * [Flatpakify](/flatpakify-repo)
+* [Contributing Guide](/contributing)
