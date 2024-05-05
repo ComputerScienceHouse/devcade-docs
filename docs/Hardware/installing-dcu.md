@@ -1,3 +1,36 @@
+# Setting Up a New Cabinet
+
+## Table of Contents
+- [Summary](#summary)
+- [Hardware](#hardware)
+- TODO: Add more headings to TOC
+
+## Summary
+
+The Devcade project should theoretically run on just about any linux distro if set up properly. Our distro of choice has been the latest Debian.
+
+In the past, we have taken advantage of Debian's preseed functionality to install the OS, and set up our launcher, [devcade-onboard](https://github.com/computersciencehouse/devcade-onboard). This (now outdated) preseed file is located in the devcade-onboard git repo and also hosted at https://devcade.csh.rit.edu/preseed and is based off of the file given as an example in the [Debian Wiki](https://wiki.debian.org/DebianInstaller/Preseed). While it is outdated now, it may be used again in the future to partially or completely automate these steps.
+
+The setup is reletively simple to perform manually as well. It mostly consists of the following:
+- Install an OS
+- Install necessary packages and runtimes
+- Cloning some Git repos
+- And doing a bit of configuration
+
+## Hardware
+
+Devcade and it's games ought to run on nearly any x86 hardware released in the last 10 years, but we recommend the following as a starting point:
+
+**CPU:** Intel Core i5 (5th gen or better)
+
+**RAM:** 8GB
+
+**GPU:** N/A
+
+This should act as a modest starting point and depending on the games you run on your cabinet or those that users are making for your cabinet, you can always upgrade these later as needed.
+
+---
+
 Install Debian 12 (Bookworm)
 - Set the hostname to `dcu.csh.rit.edu`
 - Set the password for the `root` user
