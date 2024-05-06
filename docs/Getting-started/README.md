@@ -1,14 +1,16 @@
 ### Making a Game
 
-If you want to make a game for a Devcade system, there are a couple of considerations. 
+If you are looking to make a Devcade game, there are a couple considerations to keep in mind.
 
-First is what language you want to make the game in. The Devcade project currently supports C# using MonoGame and Rust using Bevy. These are supported due to the templates and libraries made to help you properly use the Devcade systems. Theoretically you can make a game in anything and as long as it is packaged properly it *can* run on Devcade but you would have to manually handle all of the things that the library of a supported framework would give you, such as interpreting inputs as devcade controls, reading and writing to pipes for save data, aspect ratio, and more.
+#### Choosing a Language
+Firstly, you should think about what language you want to develop the game in. The Devcade project currently supports C# using MonoGame, as well as Rust using Bevy. We provide libraries for these languages to help make parts of the development process easier. These libraries assist with things such as interpreting Devcade inputs, reading and writing to pipes for save data, setting the proper aspect ratio, and more.
 
-If using MonoGame, you will probably want to use [this template](https://github.com/ComputerScienceHouse/devcade-game-template) and check out [this docs page](../Library/) for some more info on using the library. It should be included in the template, but if not using it, the library can be installed from NuGet.
+Although these are the only two languages that we "officially" support, you are not limited to only those two languages. You could theoretically make a Devcade game in whatever language you want, and it will run on Devcade as long as you build it for the appropriate system specifications. However, something to keep in mind is that since we do not have a library for other languages, you would have to figure out how to handle the things our libraries handle yourself.
 
-If using Rust, check out [cargo-devcade](https://github.com/mstrodl/cargo-devcade#readme) for more info and guides.
+If you do make a game using something other than MonoGame or Bevy, we encourage you to write up some instructions on how to do the things that a library might provide for you, and open a pull request to the docs site to add your documentation. We would be happy to review it, and we would love to help you get it merged.
 
-As you get started you will want to keep in mind the details of the Devcade system you are designing for. For the CSH Devcade cabinet you will want to note that the display is a 9:21 ultrawide monitor turned vertical, measuring 1080x2560. The cabinet itself does not have a graphics card and is running an 8th gen Intel processor with integrated graphics. The controls are laid out as follows:
+#### Devcade Controls
+As you get started, you will want to keep in mind the details of the Devcade system you are designing for. For the CSH Devcade cabinet, you will want to note that the display is a 9:21 ultrawide monitor turned vertical (measuring 1080x2560). The computer that the CSH Devcade cabinet is running on has an 8th gen Intel processor and integrated graphics. The controls are laid out as follows:
 
 ```
             Player 1                   Player 2

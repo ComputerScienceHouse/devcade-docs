@@ -32,7 +32,8 @@ This should act as a modest starting point and depending on the games you run on
 ---
 
 Install Debian 12 (Bookworm)
-- Set the hostname to `dcu.csh.rit.edu`
+- Set the hostname 
+  - The CSH Devcade cabinet has the hostname `dcu.csh.rit.edu`
 - Set the password for the `root` user
 - Create a user named `devcade` and set a password
 - When you get to disk configutation, select the option to use the entire disk, and put everythin in one partition

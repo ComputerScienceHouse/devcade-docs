@@ -12,7 +12,7 @@ Buttons will swap places on reboot. In the case we have observed the following b
 
 ### Causes:
 
-The cause for this issue is currently presumed to be that the control boards were somehow at some point set to nintendo switch mode which switches the "x" and "y" buttons as well as the "triggers". When this is interpreted by the system this results in the wrong buttons being assigned to the devcade buttons.
+The cause for this issue is currently presumed to be that the control boards were somehow at some point set to nintendo switch mode which switches the "x" and "y" buttons as well as the "triggers". When this is interpreted by the system this results in the wrong buttons being assigned to the Devcade buttons.
 
 ### Fixes:
 

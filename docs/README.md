@@ -2,7 +2,7 @@
 
 On this website you can find any documentation you need for working with the Devcade project, whether you want to make a game, leverage the API, or build your own machine.
 
-?> Note: If something doesn't look right, feel free to suggest an addition or change with the "Edit on github" button up in the corner.
+?> Note: If something doesn't look right, feel free to suggest an addition or change with the "Edit on GitHub" button up in the corner.
 
 ## What is Devcade?
 Devcade is a fully custom arcade machine made by members at RIT's [Computer Science House](https://csh.rit.edu). Devcade is an arcade built for developers, by developers. The arcade cabinet, software, and games for Devcade were all built by CSHers starting from the 2022 Fall semester.

@@ -1,20 +1,20 @@
 # Contributing to Devcade
 So, you'd like to contribute to Devcade? Thats great, we'd love the help! 
 
-This document should serve as a bit of a guide to help you get started with the project as a whole, as well as to the documentation site more specifically if thats what you're here for. Note that most of the things mentioned here are guidelines, they should be followed but not following them isn't going to end the world either. This project is split into a handful of parts and therefore a handful of separate repositories so, while this will give you an overview and a more general guide, you should refer to the documentation of each part for more specifics. For reference, each of the repos are linked below:
+This document should serve as a bit of a guide to help you get started with the project as a whole, as well as to the documentation site more specifically if thats what you're here for. Note that most of the things mentioned here are guidelines. We strongly recommend that you follow them, but not following them isn't going to end the world either. This project is split into a handful of parts and therefore a handful of separate repositories, so while this will give you an overview and a more general guide, you should refer to the documentation of each part for more specifics. For reference, each of the repos are linked below:
 
 # Parts of the project
 - [Onboard](https://github.com/ComputerScienceHouse/devcade-onboard) - The launcher and menu for the arcade cabinet itself.
 - [Website](https://github.com/ComputerScienceHouse/devcade-website) - The homepage of the project and the place to upload and manage games.
-- [Library](https://github.com/ComputerScienceHouse/Devcade-library) - The C# library for games to use in order to interact with the cabinet.
+- [Library](https://github.com/ComputerScienceHouse/devcade-library) - The C# library for games to use in order to interact with the cabinet.
 - [API](https://github.com/ComputerScienceHouse/devcade-api) - The API the website and onboard use to interact with the database and games storage.
-- [Template](https://github.com/ComputerScienceHouse/Devcade-game-template) - The Monogame template for a Devcade game.
+- [Template](https://github.com/ComputerScienceHouse/devcade-game-template) - The MonoGame template for a Devcade game.
 - [Flatpakify](https://github.com/ComputerScienceHouse/devcade-flatpakify) - The helper tool to bundle games into flatpaks.
 - [Documentation](https://github.com/ComputerScienceHouse/devcade-docs) - The docs site to consolidate and host all relevant documentation.
 
 # Useful resources
 - If you aren't reading this from there already, you should check out our [documentation site](https://devcade.csh.rit.edu/docs#/). It's where we host all of the relevant documentation for each part of the project as well as any documentation or guides that don't fit in any single repository.
-- If you've found a bug or just want to request a feature, please create an issue on github on the relevant repo.
+- If you've found a bug or just want to request a feature, please create an issue on GitHub on the relevant repo.
 - We don't have many public avenues of communication yet but in the meantime if you have questions or want to reach out, feel free to email us at devcade@csh.rit.edu.
 
 # Testing
@@ -60,10 +60,10 @@ Given that this project involves several languages across its repos, there are a
 Style and formatting standards for other languages have not been established yet or are not used in the project. If a language is used or introduced that does not have a style guide here, try to follow what exists already if applicable until a standard it settled on.
 
 # Code of conduct
-Currently this project has no direct code of conduct but it should inherit a couple by default. As always be kind to others as a base line but as a project within the Computer Science House(CSH) organization, and by extension within the Rochester Institute of Technology(RIT), the following codes of conduct should be relevant to varying degrees:
+Currently this project has no direct code of conduct but it should inherit a couple by default. As always be kind to others as a base line but as a project within the Computer Science House (CSH) organization, and by extension within the Rochester Institute of Technology (RIT), the following codes of conduct should be relevant to varying degrees:
 - [RIT Code of Ethical Conduct and Compliance](https://www.rit.edu/policies/c000)
 - [RIT Code of Conduct for Computer Use](https://www.rit.edu/policies/c082)
 - [CSH Code of Conduct](https://coc.csh.rit.edu/)
 
 # Where to ask for help
-If you want to contribute or are otherwise interested but are stuck somewhere, your first place of inquiry should be in the comments of any relevant PR or issue on github. If this is not applicable or for another method of contact, reach out to devcade@csh.rit.edu.
+If you want to contribute or are otherwise interested but are stuck somewhere, your first place of inquiry should be in the comments of any relevant PR or issue on GitHub. If this is not applicable or for another method of contact, reach out to devcade@csh.rit.edu.
