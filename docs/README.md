@@ -31,7 +31,7 @@ We officially support and have resources for Monogame games written in C# and ha
 ?> Devcade can theoretically run any executable as long as the game is formatted properly, runs on linux, and works with a few other restrictions but you will have to figure some stuff out yourself that would be done for you in one of our libraries and we make no guarantees on getting it to work.
 
 ### Working on the project
-For information on how the whole project works and implementation details, check out the TODO [How it Works]() section for an overview of how it operates. Additionally, each part of the project has a page under this section with more details even if it is also mentioned elsewhere. You can also jump to them all from right here:
+For information on how the whole project works and implementation details, check out the TODO [How it Works](/how-it-works.md) section for an overview of how it operates. Additionally, each part of the project has a page under this section with more details even if it is also mentioned elsewhere. You can also jump to them all from right here:
 
 - [Onboard Software](/onboard-repo)
 - [Website](/website-repo)
