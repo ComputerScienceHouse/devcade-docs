@@ -1,6 +1,8 @@
 # Devcade Documentation
 
-This repo contains or links to all relevant documentation for the Devcade project using docsify. Hosted at: https://devcade.csh.rit.edu/docs#/
+This repo contains or links to all relevant documentation for the Devcade project using docsify.
+
+The official site is hosted at https://devcade.csh.rit.edu/docs#/
 
 All documentation should live in the repo it applies to. If some documentation doesn't fit in any of the projects other repos, it may live here.
 
@@ -16,9 +18,9 @@ For further changes to the docsify site overall, refer to the [docsify documenta
 
 # Running locally
 
-Install docsify-cli
+Install dependencies
 ```
-npm i docsify-cli -g
+npm i
 ```
 
 And serve it, the site will then be available at `http://localhost:3000/docs/`
