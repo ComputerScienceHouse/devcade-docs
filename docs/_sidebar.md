@@ -2,7 +2,7 @@
 * [Getting Started](/Getting-started/)
   * [Making Your First Game](/Getting-started/first-game.md)
   * [Using the Game Template](/Getting-started/using-template.md)
-* [Hardware](/Hardware/)
+* Hardware
   * [Cabinet](/Hardware/cabinet)
   * [Gamepad](/Hardware/gamepad)
   * [Installing DCU](/Hardware/installing-dcu)
