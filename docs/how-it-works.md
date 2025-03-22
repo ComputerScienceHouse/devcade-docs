@@ -1,6 +1,6 @@
 # How Devcade Works
 
-Devcade is a project with many moving parts and a couple of ways that data moves around. In this section I will attempt to explain and overview how it all fits together and works at a high level. For more details on the workings or usage on any individual part, check out its dedicated page.
+Devcade is a project with many moving parts and a couple of ways that data moves around. In this section I will attempt to explain and overview how it all fits together and works at a high level. For more details on the workings or usage on any individual part, check out its dedicated page which is pulled directly from the readme of its repo.
 
 ## All the parts
 ### Onboard
@@ -9,7 +9,7 @@ The backend is a separate program within the same repository that runs in the ba
 
 ### Website
 The [Devcade website](/website-repo) is, as you might expect, the [main public website](https://devcade.csh.rit.edu) for the project. It serves a couple of purposes, to act as a public landing page with basic information on what the project is and why its cool, and to be the direct interface for users looking through all the games or uploading new games. The former is a simple goal performed with mostly static sections of the site but the latter is lots of back and forth with the API. 
-The website also handles accounts in a couple of forms to restrict some games from view, and to keep track of who uploaded a game. The way we have it set up at the moment it integrates with our organizations existing SSO auth as well as offering an option to log in with google.
+The website also handles accounts in a couple of forms to restrict some games from view, and to keep track of who uploaded a game. The way we have it set up at the moment it integrates with our organizations existing SSO auth as well as offering an option to log in with google for RIT accounts. At this time there is no login for the general public outside of the Rochester Institute of Technology.
 
 ### Game Libraries
 Games running on Devcade sometimes need to interact with the cabinet or other infrastructure while running. This might include simply mapping controls in a more convenient manner, saving or loading data from our servers, or in some cases, other cabinet specific actions such as reading ID cards from an NFC reader or other future actions. Currently we only have an official [library for MonoGame](/library-repo) in C# but there are some other community supported ones and you also don't necessarily need to use one to get your game working on Devcade.
@@ -23,7 +23,7 @@ The sources of data that this API talks to and provides an interface for are a d
 While not necessarily part of the vital operation of Devcade, we do provide templates for people to use when making games for the project. At the moment we just have one for [MonoGame](/template-repo). They set up some things for the user such as the library and aspect ratio.
 
 ### Flatpakify
-[Flatpakify](/flatpakify-repo) is a tool developed to help users package their games into Flatpaks. This is required in order for games to be uploaded and run on Devcade but can be an unfamiliar process to many. This tool helps to simplify that process by doing most of it for you, given the right input.
+[Flatpakify](/flatpakify-repo) is a tool developed to help users package their games into Flatpaks. This is required in order for games to be uploaded and run on Devcade but can be an unfamiliar process to many. This tool helps to simplify that process by doing most of it for you, given the right input. It is originally designed to work with C# projects but with some workarounds it can be used on other projects as well.
 
 ### Documentation
 Thats what you are reading here. You probably know why its here, but in addition to providing useful information that doesn't otherwise have a home, it also brings the READMEs of all of the other repos together into one convenient spot for viewing, [including its own](/../).
