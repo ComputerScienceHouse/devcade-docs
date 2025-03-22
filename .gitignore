@@ -5,3 +5,4 @@ venv/
 users.sqlite3
 launch.json
 node_modules
+.vscode/
