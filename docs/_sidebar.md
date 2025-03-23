@@ -15,4 +15,6 @@
   * [Monogame Game Template](/template-repo)
   * [Flatpakify](/flatpakify-repo)
   * [Documentation](/../)
-* [Contributing Guide](/contributing)
+* Contributing Guide
+  * [How to Contribute](/Contributing/contributing.md)
+  * [Code Style](/Contributing/style-guides.md)
