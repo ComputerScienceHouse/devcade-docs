@@ -1,7 +1,7 @@
 * [Home](/)
-* [Getting Started](/Getting-started/)
-  * [Making Your First Game](/Getting-started/first-game.md)
-  * [Using the Game Template](/Getting-started/using-template.md)
+* [Making Games](/Making-games/)
+  * [Making Your First Game](/Making-games/first-game.md)
+  * [Using the Game Template](/Making-games/using-template.md)
 * Hardware
   * [Cabinet](/Hardware/cabinet)
   * [Gamepad](/Hardware/gamepad)
