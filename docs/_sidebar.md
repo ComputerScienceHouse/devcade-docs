@@ -1,11 +1,9 @@
 * [Home](/)
-* [Making Games](/Making-games/)
-  * [Making Your First Game](/Making-games/first-game.md)
-  * [Using the Game Template](/Making-games/using-template.md)
+* [Making your First Game](/Making-games/)
 * Hardware
-  * [Cabinet](/Hardware/cabinet)
-  * [Gamepad](/Hardware/gamepad)
-  * [Installing DCU](/Hardware/installing-dcu)
+  * [Cabinet](/Hardware/cabinet.md)
+  * [Gamepad](/Hardware/gamepad.md)
+  * [Installing DCU](/Hardware/install-guide.md)
 * Software
   * [Overview](/software.md)
   * [Onboard Software](/onboard-repo)
