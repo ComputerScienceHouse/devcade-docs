@@ -12,15 +12,7 @@ If you do make a game using something other than MonoGame or Bevy, we encourage 
 
 #### Devcade Controls
 
-As you get started, you will want to keep in mind the details of the Devcade system you are designing for. For the CSH Devcade cabinet, you will want to note that the display is a 9:21 ultrawide monitor turned vertical (measuring 1080x2560). The computer that the CSH Devcade cabinet is running on has an 8th gen Intel processor and integrated graphics. The controls are laid out as follows:
-
-```
-            Player 1                   Player 2
-
-    ^     A1 A2 A3 A4                 ^     A1 A2 A3 A4
- <Stick>               Menu  Menu  <Stick>
-    v     B1 B2 B3 B4                 v     B1 B2 B3 B4
-```
+As you get started, you will want to keep in mind the details of the Devcade system you are designing for. For the CSH Devcade cabinet, you will want to note that the display is a 9:21 ultrawide monitor turned vertical (measuring 1080x2560). The computer that the CSH Devcade cabinet is running on has an 8th gen Intel processor and integrated graphics. 
 
 Once youve got something playable you want to put on the cabinet, you should build and zip your game in a manner such that it is self contained and should require no runtimes or other resources. Then head over to the website, log in, and go to the upload page. There should also be instructions on that page for packaging your game. Upload the zip, banner image, and icon image and give it a name and description. If all is good you should be able to hit upload and it should work. Pressing both menu buttons will refresh the games list on the cabinet and hopefully you will see you game!
 
