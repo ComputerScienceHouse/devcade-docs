@@ -28,6 +28,7 @@ If you have made changes to the project and would like to contribute them upstre
 - A summary of any changes being submitted
 - Any issues these changes address or other reasons for the changes
 - Any known new issues created by the changes or other additional changes that need to be implemented for these changes to be effective
+
 Once submitted and ready for review, one or more members of the Devcade core team will review it and respond accordingly. Do note however that all of the core team are college students with classwork, other projects, and lives outside of this. So please understand if PRs aren't always reviewed in a timely manner.
 
 # Reporting bugs or requesting features
