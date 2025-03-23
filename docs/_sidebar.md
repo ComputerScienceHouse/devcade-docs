@@ -6,8 +6,8 @@
   * [Cabinet](/Hardware/cabinet)
   * [Gamepad](/Hardware/gamepad)
   * [Installing DCU](/Hardware/installing-dcu)
-* How it Works
-  * [Overview](/how-it-works.md)
+* Software
+  * [Overview](/software.md)
   * [Onboard Software](/onboard-repo)
   * [Website](/website-repo)
   * [Monogame Library](/library-repo)
