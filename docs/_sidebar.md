@@ -3,7 +3,8 @@
 * Hardware
   * [Cabinet](/Hardware/cabinet.md)
   * [Gamepad](/Hardware/gamepad.md)
-  * [Installing DCU](/Hardware/install-guide.md)
+* Installing Devcade
+  * [Install Guide](/Hardware/install-guide.md)
 * Software
   * [Overview](/software.md)
   * [Onboard Software](/onboard-repo)
