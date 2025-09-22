@@ -1,6 +1,14 @@
 # Gamepad
 
-The control panel on the Devcade machine contains two sets of controls, which allows for the development of two-player games. These two controllers are typically referred to as Player 1 and Player 2. Each of the two sets of controls contains an analog joystick that accepts input in the form of a 1 or a 0 in each of the 8 main directions (up, down, left, right, & the 4 diagonals). In addition, each player has 2 rows of 4 arcade buttons, which are named A1-A4 (for the top row), and B1-B4 (for the bottom row). The different buttons are also assigned a specific color to make it easier to differentiate between them while using the cabinet. Lastly, there is one menu button for each player, positioned such that the two menu buttons are next to each other in the center of the control panel.
+The control panel on Devcade has two sets of controls for Player 1 and Player 2.
+
+Each set of the controls contains an 8 Directional Analog Joystick (N,S,E,W, Diagonals). The joystick accepts input in Binary for each direction.
+
+In addition, each player has 2 rows of 4 arcade buttons. Labeled A1-A4, and B1-B4 for the top and bottom rows respectively.
+
+Each button on the Top row has a different color and is the same for both players, whereas the bottom row is one color and different for the players.
+
+Lastly, there is one menu button for each player, positioned such that the two menu buttons are next to each other in the center of the control panel.
 
 ### Button Names to Color Mapping
 
@@ -26,3 +34,36 @@ For the bottom row of buttons, all 4 of them are purple for Player 1, and all of
  <Stick>               Menu  Menu  <Stick>
     v     B1 B2 B3 B4                 v     B1 B2 B3 B4
 ```
+
+### Control Panel Wiring
+The control panel is wired to a Pi-Pico through GPIO, where it emulates the inputs to an Xbox controller, and sends it over to the Computer.
+
+The Pi-Pico runs the following program written in Rust to emulate the input to an Xbox Controller: https://github.com/Mstrodl/devcade-controller/.
+
+#### GPIO Pin Map
+##### Player1:
+- A1-A4: {13, 12, 11, 10}
+- B1-B4: {17, 16, 15, 14}
+- N,E,S,W: {27, 22, 28, 26}
+- Menu: 9
+
+##### Player2:
+- A1-A4: {6, 7, 2, 3}
+- B1-B4: {4, 5, 0, 1}
+- N,E,S,W: {20, 18, 21, 19}
+- Menu: 8
+
+#### Xbox Controller Mapping
+- A1 = Buttons.X
+- A2 = Buttons.Y
+- A3 = Buttons.RightShoulder
+- A4 = Buttons.LeftShoulder
+- B1 = Buttons.A
+- B2 = Buttons.B
+- B3 = Buttons.RightTrigger
+- B4 = Buttons.LeftTrigger
+- Menu = Buttons.Start
+- StickDown = Buttons.LeftThumbstickDown
+- StickUp = Buttons.LeftThumbstickUp
+- StickLeft = Buttons.LeftThumbstickLeft
+- StickRight = Buttons.LeftThumbstickRight
