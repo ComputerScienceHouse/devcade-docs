@@ -26,7 +26,7 @@ While not necessarily part of the vital operation of Devcade, we do provide temp
 [Flatpakify](/flatpakify-repo) is a tool developed to help users package their games into Flatpaks. This is required in order for games to be uploaded and run on Devcade but can be an unfamiliar process to many. This tool helps to simplify that process by doing most of it for you, given the right input. It is originally designed to work with C# projects but with some workarounds it can be used on other projects as well.
 
 ### Documentation
-Thats what you are reading here. You probably know why its here, but in addition to providing useful information that doesn't otherwise have a home, it also brings the READMEs of all of the other repos together into one convenient spot for viewing, [including its own](/../).
+Thats what you are reading here. You probably know why its here, but in addition to providing useful information that doesn't otherwise have a home, it also brings the READMEs of all of the other repos together into one convenient spot for viewing, [including its own](#/).
 
 ## The standard flow of operation
 
