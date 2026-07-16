@@ -38,7 +38,7 @@ For the bottom row of buttons, all 4 of them are purple for Player 1, and all of
 ### Control Panel Wiring
 The control panel is wired to a Pi-Pico through GPIO, where it emulates the inputs to an Xbox controller, and sends it over to the Computer.
 
-The Pi-Pico runs the following program written in Rust to emulate the input to an Xbox Controller: https://github.com/Mstrodl/devcade-controller/.
+The Pi-Pico runs the following program written in Rust to emulate the input to an Xbox Controller: https://github.com/ComputerScienceHouse/devcade-controller.
 
 #### GPIO Pin Map
 ##### Player1:
